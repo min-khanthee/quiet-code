@@ -1,0 +1,71 @@
+{
+  "name": "quiet-code",
+  "displayName": "quiet-code",
+  "description": "Select lines of code and temporarily dim them to reduce visual clutter. Ideal for tracing data flow, simplifying review, and working in dense files.",
+  "version": "0.0.1",
+  "publisher":"minlabs",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+  "onCommand:quiet-code.toggleDim",
+  "onCommand:quiet-code.clearDimsInFile",
+  "onCommand:quiet-code.clearAllDims"
+],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "quiet-code.toggleDim",
+        "title": "Quiet Code: Toggle Dim"
+      },
+      {
+        "command": "quiet-code.clearDimsInFile",
+        "title": "Quiet Code: Clear Dims in File"
+      },
+      {
+        "command": "quiet-code.clearAllDims",
+        "title": "Quiet Code: Clear All Dims"
+      }
+    ],
+    "keybindings": [
+  {
+    "command": "quiet-code.toggleDim",
+    "key": "cmd+shift+1",
+    "when": "editorTextFocus"
+  },
+  {
+    "command": "quiet-code.clearDimsInFile",
+    "key": "cmd+shift+2",
+    "when": "editorTextFocus"
+  },
+  {
+    "command": "quiet-code.clearAllDims",
+    "key": "cmd+shift+0",
+    "when": "editorTextFocus"
+  }
+]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "eslint": "^9.0.0",
+    "typescript": "^5.8.3",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}

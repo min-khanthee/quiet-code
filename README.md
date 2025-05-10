@@ -1,71 +1,66 @@
-# quiet-code README
+# Quiet Code
 
-This is the README for your extension "quiet-code". After writing up a brief description, we recommend including the following sections.
+Quiet Code lets you dim selected lines in your code editor to reduce visual clutter.
 
-## Features
+Ideal for:
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+- Tracing data flow
+- Simplifying complex files
+- Focusing on the logic you care about
 
 ---
 
-## Following extension guidelines
+## Features
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+- Select any line(s) and toggle dimming with `Cmd+Shift+1`
+- Clear all dims in the current file with `Cmd+Shift+2`
+- Clear all dims across all files with `Cmd+Shift+0`
+- Dim styling is subtle and non-destructive — your code stays clean
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+**On dark theme**
+![Before dimming](./images/screenshot-dark1.png)
+![After dimming](./images/screenshot-dark2.png)
 
-## Working with Markdown
+**On light theme**
+![Before dimming](./images/screenshot-light1.png)
+![After dimming](./images/screenshot-light2.png)
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+## Why?
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+Sometimes, the hardest part of reading code is ignoring what you don’t need.
 
-## For more information
+Quiet Code gives you a soft focus tool — think of it like a spotlight for your mind.
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+---
 
-**Enjoy!**
+## Keybindings
+
+| Command                    | Shortcut        |
+| -------------------------- | --------------- |
+| Toggle Dim                 | Cmd + Shift + 1 |
+| Clear Dims in Current File | Cmd + Shift + 2 |
+| Clear All Dims             | Cmd + Shift + 0 |
+
+---
+
+## Getting Started
+
+1. Select lines of code
+2. Hit `Cmd + Shift + 1` to toggle dim
+3. To remove dims, use the same keybinding or clear them with `Cmd + Shift + 2`
+
+---
+
+## Tip
+
+You can also trigger commands from the Command Palette:
+
+- `Quiet Code: Toggle Dim`
+- `Quiet Code: Clear Dims in File`
+- `Quiet Code: Clear All Dims`
+
+---
+
+Made with care by minlabs 💛
+If you have feedback or ideas for improvement, I’d love to hear from you directly.  
+[Send me an email](mailto:pkhanthee@gmail.com)

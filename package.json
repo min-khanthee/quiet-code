@@ -1,9 +1,13 @@
 {
   "name": "quiet-code",
-  "displayName": "quiet-code",
-  "description": "Select lines of code and temporarily dim them to reduce visual clutter. Ideal for tracing data flow, simplifying review, and working in dense files.",
-  "version": "0.0.1",
+  "displayName": "Quiet Code",
+  "description": "Dim selected lines to reduce visual noise and stay focused in dense files.",
+  "version": "0.0.3",
   "publisher":"minlabs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/min-khanthee/quiet-code.git"
+  },
   "engines": {
     "vscode": "^1.85.0"
   },

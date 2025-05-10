@@ -1,67 +1,11 @@
 import * as vscode from 'vscode';
+import { mergeRanges, adjustDimForSelection } from './helpers';
+import { quietDimStyle } from './decoration';
 
 const dimmedSelections = new Map<string, vscode.Range[]>();
-const quietDimStyle = vscode.window.createTextEditorDecorationType({
-  opacity: '0.2',
-});
 
 export function activate(context: vscode.ExtensionContext) {
   console.log("🚀 Quiet Code extension activated");
-
-
-
-function mergeRanges(ranges: vscode.Range[]): vscode.Range[] {
-    if (ranges.length === 0) return [];
-
-    const sorted = [...ranges].sort((a, b) => a.start.compareTo(b.start));
-    const merged: vscode.Range[] = [sorted[0]];
-
-    for (const current of sorted.slice(1)) {
-      const last = merged[merged.length - 1];
-      if (last.end.isAfterOrEqual(current.start)) {
-        // Merge overlapping or adjacent
-        const newRange = new vscode.Range(
-          last.start,
-          last.end.isAfter(current.end) ? last.end : current.end
-        );
-        merged[merged.length - 1] = newRange;
-      } else {
-        merged.push(current);
-      }
-    }
-
-    return merged;
-  }
-
-
-  function adjustDimForSelection(existing: vscode.Range[], selection: vscode.Selection): vscode.Range[] {
-    let wasUndimmed = false;
-    const newRanges: vscode.Range[] = [];
-
-    for (const range of existing) {
-      if (range.contains(selection)) {
-        if (!range.isEqual(selection)) {
-          if (range.start.isBefore(selection.start)) {
-            newRanges.push(new vscode.Range(range.start, selection.start));
-          }
-          if (range.end.isAfter(selection.end)) {
-            newRanges.push(new vscode.Range(selection.end, range.end));
-          }
-        }
-        wasUndimmed = true;
-      } else {
-        newRanges.push(range);
-      }
-    }
-
-    if (!wasUndimmed) {
-      newRanges.push(selection);
-    }
-
-    return newRanges;
-  }
-
-
 
 
   function applyDims(editor: vscode.TextEditor | undefined) {

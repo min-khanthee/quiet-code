@@ -18,11 +18,19 @@ Ideal for:
 - Dim styling is subtle and non-destructive — your code stays clean
 
 **On dark theme**
+
+Before:
 ![Before dimming](./images/screenshot-dark1.png)
+
+After:
 ![After dimming](./images/screenshot-dark2.png)
 
 **On light theme**
+
+Before:
 ![Before dimming](./images/screenshot-light1.png)
+
+After:
 ![After dimming](./images/screenshot-light2.png)
 
 ## Why?

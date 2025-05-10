@@ -3,7 +3,7 @@
   "displayName": "Quiet Code",
   "description": "Dim selected lines to reduce visual noise and stay focused in dense files.",
   "icon": "images/icon.png",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "publisher":"minlabs",
   "repository": {
     "type": "git",

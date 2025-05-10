@@ -19,18 +19,14 @@ Ideal for:
 
 **On dark theme**
 
-Before:
 ![Before dimming](./images/screenshot-dark1.png)
 
-After:
 ![After dimming](./images/screenshot-dark2.png)
 
 **On light theme**
 
-Before:
 ![Before dimming](./images/screenshot-light1.png)
 
-After:
 ![After dimming](./images/screenshot-light2.png)
 
 ## Why?
@@ -71,4 +67,4 @@ You can also trigger commands from the Command Palette:
 
 Made with care by minlabs 💛
 If you have feedback or ideas for improvement, I’d love to hear from you directly.  
-[Send me an email](mailto:pkhanthee@gmail.com)
+You can email pkhanthee@gmail.com

@@ -5,6 +5,7 @@
   "icon": "images/icon.png",
   "version": "0.0.6",
   "publisher":"minlabs",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/min-khanthee/quiet-code.git"

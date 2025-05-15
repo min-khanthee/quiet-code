@@ -1,6 +1,6 @@
 # Quiet Code
 
-Quiet Code lets you dim selected lines in your code editor to reduce visual clutter.
+Quiet Code lets you **dim selected lines in your code editor** to reduce visual clutter.
 
 Ideal for:
 
@@ -12,10 +12,11 @@ Ideal for:
 
 ## Features
 
-- Select any line(s) and toggle dimming with `Cmd+Shift+1`
-- Clear all dims in the current file with `Cmd+Shift+2`
-- Clear all dims across all files with `Cmd+Shift+0`
-- Dim styling is subtle and non-destructive — your code stays clean
+- **Isolate mode**: Dim everything _except_ the lines you select (`Cmd + Shift + 1`)
+- **Toggle dim**: Dim or undim selected lines (`Cmd + Shift + 2`)
+- **Clear dims in current file** (`Cmd + Shift + 9`)
+- **Clear all dims across all files** (`Cmd + Shift + 0`)
+- Subtle, non-destructive styling — your code stays clean
 
 **On dark theme**
 
@@ -39,19 +40,21 @@ Quiet Code gives you a soft focus tool — think of it like a spotlight for your
 
 ## Keybindings
 
-| Command                    | Shortcut        |
-| -------------------------- | --------------- |
-| Toggle Dim                 | Cmd + Shift + 1 |
-| Clear Dims in Current File | Cmd + Shift + 2 |
-| Clear All Dims             | Cmd + Shift + 0 |
+| Command                                 | Shortcut        |
+| --------------------------------------- | --------------- |
+| Isolate Selection (dim everything else) | Cmd + Shift + 1 |
+| Toggle Dim on Selection                 | Cmd + Shift + 2 |
+| Clear Dims in Current File              | Cmd + Shift + 9 |
+| Clear All Dims                          | Cmd + Shift + 0 |
 
 ---
 
 ## Getting Started
 
-1. Select lines of code
-2. Hit `Cmd + Shift + 1` to toggle dim
-3. To remove dims, use the same keybinding or clear them with `Cmd + Shift + 2`
+1. Select the lines of code you want to focus on
+2. Press `Cmd + Shift + 1` to **isolate** them (dim everything else)
+3. Use `Cmd + Shift + 2` to toggle dim on selected lines
+4. Clear dims with `Cmd + Shift + 9` (file) or `Cmd + Shift + 0` (all files)
 
 ---
 
@@ -59,12 +62,13 @@ Quiet Code gives you a soft focus tool — think of it like a spotlight for your
 
 You can also trigger commands from the Command Palette:
 
+- `Quiet Code: Isolate Selection`
 - `Quiet Code: Toggle Dim`
 - `Quiet Code: Clear Dims in File`
 - `Quiet Code: Clear All Dims`
 
 ---
 
-Made with care by minlabs 💛
+Made with care by **minlabs** 💛
 If you have feedback or ideas for improvement, I’d love to hear from you directly.  
-You can email pkhanthee@gmail.com
+📬 pkhanthee@gmail.com

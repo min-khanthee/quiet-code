@@ -3,7 +3,7 @@
   "displayName": "Quiet Code",
   "description": "Dim selected lines to reduce visual noise and stay focused in dense files.",
   "icon": "images/icon.png",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "publisher":"minlabs",
   "repository": {
     "type": "git",
@@ -15,14 +15,14 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [
-  "onCommand:quiet-code.toggleDim",
-  "onCommand:quiet-code.clearDimsInFile",
-  "onCommand:quiet-code.clearAllDims"
-],
+  "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
+      {
+        "command": "quiet-code.isolateSelection",
+        "title": "Quiet Code: Isolate Selection"
+      },
       {
         "command": "quiet-code.toggleDim",
         "title": "Quiet Code: Toggle Dim"
@@ -38,13 +38,18 @@
     ],
     "keybindings": [
   {
-    "command": "quiet-code.toggleDim",
+    "command": "quiet-code.isolateSelection",
     "key": "cmd+shift+1",
     "when": "editorTextFocus"
   },
   {
-    "command": "quiet-code.clearDimsInFile",
+    "command": "quiet-code.toggleDim",
     "key": "cmd+shift+2",
+    "when": "editorTextFocus"
+  },
+  {
+    "command": "quiet-code.clearDimsInFile",
+    "key": "cmd+shift+9",
     "when": "editorTextFocus"
   },
   {

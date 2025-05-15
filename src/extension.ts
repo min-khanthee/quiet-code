@@ -38,6 +38,55 @@ export function activate(context: vscode.ExtensionContext) {
     editor.setDecorations(quietDimStyle, updatedRanges);
   });
 
+const isolateSelection = vscode.commands.registerCommand('quiet-code.isolateSelection', () => {
+  const editor = vscode.window.activeTextEditor;
+  if (!editor) {
+    return vscode.window.showInformationMessage('No active editor');
+  }
+
+  const docUri = editor.document.uri.toString();
+  const selections = editor.selections.filter(sel => !sel.isEmpty);
+
+  if (selections.length === 0) {
+    return vscode.window.showInformationMessage('No text selected');
+  }
+
+  const totalLines = editor.document.lineCount;
+  const dimmedRanges: vscode.Range[] = [];
+
+  // Sort selections by line number
+  const sortedSelections = [...selections].sort((a, b) => a.start.line - b.start.line);
+
+  let currentLine = 0;
+
+  for (const selection of sortedSelections) {
+    const startLine = selection.start.line;
+    const endLine = selection.end.line;
+
+    // Add dimmed range BEFORE selection
+    if (startLine > currentLine) {
+      dimmedRanges.push(new vscode.Range(
+        new vscode.Position(currentLine, 0),
+        new vscode.Position(startLine - 1, 9999)
+      ));
+    }
+
+    // Move cursor to just after this selection
+    currentLine = endLine + 1;
+  }
+
+  // Add dimmed range AFTER last selection (if needed)
+  if (currentLine < totalLines) {
+    dimmedRanges.push(new vscode.Range(
+      new vscode.Position(currentLine, 0),
+      new vscode.Position(totalLines - 1, 9999)
+    ));
+  }
+
+  setDims(docUri, dimmedRanges);
+  editor.setDecorations(quietDimStyle, dimmedRanges);
+});
+
 // Undims all lines in the active file and removes them from memory
   const clearDimsInFile = vscode.commands.registerCommand('quiet-code.clearDimsInFile', () => {
     const editor = vscode.window.activeTextEditor;
@@ -79,6 +128,7 @@ setTimeout(() => applyDims(vscode.window.activeTextEditor), 50);
 
   context.subscriptions.push(
     toggleDim,
+    isolateSelection,
     clearDimsInFile,
     clearAllDimsCommand,
     editorChangeDisposable
